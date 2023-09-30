@@ -3,26 +3,30 @@ body {
   background-color: black;
   margin: 0;
   padding: 0;
-  position: fixed;
-    left: 92px;
-    top: 50px;
+  height: 100%; /* Make the body fill the entire viewport height */
+  overflow-y: scroll; /* Enable vertical scrolling */
   }
+
+.contentContainer {
+  margin-left: 65px;
+  margin-top: 35px;
+}
 
 h1 {
   color: white;
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 10px;
-  color: #333; /* Text color */
+  color: #333; 
   text-align: center; /* Center align the text */
-  background-color: #f0f0f0; /* Background color */
-  padding: 10px; /* Add some padding for spacing */
-  border-radius: 5px; /* Rounded corners */
+  background-color: #f0f0f0; 
+  padding: 10px; 
+  border-radius: 5px; 
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
 }
 
 h2 {
-  display: flexbox;
+  display: flex;
   justify-content: space-between;
   font-size: 20px;
   font-weight: bold;
@@ -35,7 +39,6 @@ h2 {
 
 .content {
   display: none;
-  /* Additional styling for the content */
 }
 
 .toggle-button {
@@ -69,9 +72,6 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  overflow-x: auto; /* Enable horizontal scrolling */
-  overflow-y: scroll; /* Enable vertical scrolling */
-  white-space: nowrap; /* Prevent line breaks */
 
 }
 
@@ -88,3 +88,4 @@ h2 {
 .img:hover {
   transform: scale(1.1); /* Add a hover effect to enlarge the image */
 }
+
