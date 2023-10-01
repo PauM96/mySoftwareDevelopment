@@ -9,18 +9,23 @@ window.addEventListener("DOMContentLoaded", function() {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-  const toggleButt = document.querySelector('.js-toggle-button');
-  const containerContent = document.querySelector('.imagesContainer');
-  let isHidden = true;
+const toggleButtons = document.querySelectorAll('.js-toggle-button');
+  toggleButtons.forEach( (toggleButt) => {
+    const containerContent = toggleButt.closest('.contentContainer')
+      .querySelector('.imagesContainer');
+    let isHidden = false;
 
-  toggleButt.addEventListener('click', () => {
-    if (!isHidden) {
-      containerContent.style.display = 'none';
-      console.log('is working')
-      isHidden = true;
-    } else {
-      containerContent.style.display = 'block';
-      isHidden = false;
-    }
-  });
+    toggleButt.addEventListener('click', () => {
+      if (!isHidden) {
+        containerContent.style.display = 'none';
+        toggleButt.innerHTML = '+';
+        isHidden = true;
+      } else {
+        containerContent.style.display = 'block';
+        toggleButt.innerHTML = '-';
+        isHidden = false;
+      }
+    });  
+  })
+
 });
