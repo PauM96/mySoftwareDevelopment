@@ -4,7 +4,9 @@ window.addEventListener("DOMContentLoaded", function() {
 
   // Establece el atributo target de todos los enlaces a "_blank"
   links.forEach(function(link) {
-    link.setAttribute("target", "_blank");
+    if(!link.classList.contains("js-sidebar-link")){
+      link.setAttribute("target", "_blank");
+    }
   });
 });
 
@@ -29,3 +31,4 @@ const toggleButtons = document.querySelectorAll('.js-toggle-button');
   })
 
 });
+
