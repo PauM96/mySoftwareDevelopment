@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Item</title>
+    <link rel="stylesheet" href="styles/addItem.css">
+</head>
+<body>
+    <h1>Add a new Item</h1>
+    
+    <form id="addItemForm">
+        <label for="itemLink">Link:</label>
+        <input type="text" id="itemLink" name="itemLink" required>
+
+        <label for="itemImage">Imagen del artículo:</label>
+        <input type="file" id="itemImage" name="itemImage" accept="image/*" required>
+
+        <label for="itemSection">Sección del artículo:</label>
+          <select id="itemSection" name="itemSection" required>
+              <option value="seccion1">BASICS OF PROGRAMING</option>
+              <option value="seccion2">PROGRAMING COURSES</option>
+              <option value="seccion3">CODE PRACTICE</option>        
+              <option value="seccion4">MACHINE LEARNING</option>        
+          </select>
+          <button type="submit">SUBMIT</button>
+    </form>
+
+
+    
+    <script type="module" src="Scripts/addItem.js"></script>
+</body>
+</html>
