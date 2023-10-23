@@ -1,21 +1,19 @@
 document.getElementById("addItemForm").addEventListener("submit", function(event) {
+
   event.preventDefault();
+  const formData = new FormData(this);
 
-  // Get values from the form
-  const link = document.getElementById("itemLink").value;
-  const section = document.getElementById("itemSection").value;
+  const newItem = document.createElement("a");
+  newItem.href = formData.get("itemLink");
+  
+  const img = document.createElement("img");
+  img.src = formData.get("itemImage");
 
-  // Create a new item element
-  const newItem = document.createElement("div");
-  newItem.className = "item";
-  newItem.innerHTML = `
-      <a href="${link}" target="_blank">Link</a>
-      <div class="section">${section}</div>
-  `;
+  const selectedSection = formData.get("itemSection");
+  
+  const itemsSection = document.getElementById(`${selectedSection}itemSection`);
+  itemsSection.appendChild(newItem);
 
-  // Add the new item to the "addedItems" container
-  document.getElementById("addedItems").appendChild(newItem);
-
-  // Clear the form
-  document.getElementById("addItemForm").reset();
+  this.reset();
+  window.location.href = "index.html";
 });
